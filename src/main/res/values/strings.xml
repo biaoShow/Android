@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">推荐办卡</string>
+    <drawable name="clr_normal">#FFFFFF</drawable>
+    <drawable name="clr_pressed">#E3E3E3</drawable>
+    <drawable name="unselect">#E53935</drawable>
+    <drawable name="select">#A52A2A</drawable>
+</resources>
