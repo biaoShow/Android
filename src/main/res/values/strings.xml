@@ -4,4 +4,22 @@
     <drawable name="clr_pressed">#E3E3E3</drawable>
     <drawable name="unselect">#E53935</drawable>
     <drawable name="select">#A52A2A</drawable>
+    <string name="tv_exclusive_qrcode">你的活动专属二维码</string>
+    <string name="tv_exclusive_link">专属链接</string>
+    <string name="tv_address">https://www.biadu.com</string>
+    <string name="tv_copy">复制</string>
+    <string name="tv_explaintitel">活动说明：</string>
+    <string name="tv_explain1">1.活动说明，有业务配置。活动说明，有业务配置。活动说明，有业务配置。活动说明，有业务配置。</string>
+    <string name="tv_explain2">2.活动说明，有业务配置。活动说明，有业务配置。</string>
+    <string name="btn_progress">推荐进度</string>
+    <string name="btn_share">立即分享</string>
+    <string name="tv_share_qrcoed">邀请好友扫一扫，分享给TA</string>
+    <string name="tv_weixin">微信</string>
+    <string name="tv_pengyouquan">朋友圈</string>
+    <string name="tv_weibo">微博</string>
+    <string name="tv_qq">QQ</string>
+    <string name="tv_save">保存到相册</string>
+    <string name="tv_cancel">取消</string>
+    <string name="tv_title_applycard">推荐办卡</string>
+
 </resources>

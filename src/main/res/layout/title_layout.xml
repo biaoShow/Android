@@ -5,14 +5,15 @@
 
 
     <TextView
+        android:id="@+id/tv_title_applycard"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="推荐办卡"
+        android:text="@string/tv_title_applycard"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:id="@+id/textView" />
+        />
 
     <Button
         android:id="@+id/button"
@@ -20,7 +21,7 @@
         android:layout_height="30dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_alignBottom="@+id/textView"
+        android:layout_alignBottom="@+id/tv_title_applycard"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@mipmap/back"

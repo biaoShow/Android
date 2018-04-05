@@ -5,8 +5,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.view.View;
 import android.widget.ImageView;
+
+import com.example.biao.demo1.SocialContact.CardFriendBean;
 
 /**
  * 自定义Dialog类
@@ -14,27 +15,40 @@ import android.widget.ImageView;
  */
 
 public class MyDialog extends Dialog {
-    private MainActivity myMainActivity;
-    private View view;
+    private CardFriendBean cfbean;
+//    private Context context;
+    private ImageView iv_dialog_rRCode;
 
-    public MyDialog(@NonNull Context context, int dialog) {
+//    public MyDialog(@NonNull Context context, CardFriendBean cfbean){
+//        super(context);
+//        this.cfbean = cfbean;
+//        this.context = context;
+//    }
+
+
+    public MyDialog(@NonNull Context context) {
         super(context);
+//        this.context = context;
     }
-    private ImageView iv_Dialog_QRCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mydialog_layout);
+        cfbean = new CardFriendBean();
+        String str = cfbean.url = "www.baidu.com";
+//        LinearLayout linearLayout = findViewById(R.id.ll_share_item);
+//
+//        int length = model.strArray.length;
+//        for (int i = 0;i<length;i++){
+//            View view = View.inflate(this.context,R.layout.title_layout,null);
+//            linearLayout.addView(view);
+//        }
 
-        myMainActivity = (MainActivity) getOwnerActivity();
-        iv_Dialog_QRCode = findViewById(R.id.iv_Dialog_QRCode);
-        Bitmap bitmap = QRCodeUtil.createQRImage(MainActivity.str,500,500,null);
-        iv_Dialog_QRCode.setImageBitmap(bitmap);
+        iv_dialog_rRCode = findViewById(R.id.iv_dialog_qRCode);
+        Bitmap bitmap = QRCodeUtil.createQRImage(str, 500, 500, null);
+        iv_dialog_rRCode.setImageBitmap(bitmap);
     }
 
-    public void setView(View view) {
-        this.view = view;
-    }
 }
 
