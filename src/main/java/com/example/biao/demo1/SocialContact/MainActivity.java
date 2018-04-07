@@ -1,4 +1,4 @@
-package com.example.biao.demo1;
+package com.example.biao.demo1.SocialContact;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.biao.demo1.SocialContact.MainActivityPresenter;
+import com.example.biao.demo1.R;
 
 /**
 * btn_progress 推荐进度按钮
@@ -19,8 +19,7 @@ import com.example.biao.demo1.SocialContact.MainActivityPresenter;
 public class MainActivity extends AppCompatActivity {
     //定义控件
     private Button btn_progress,btn_share;
-    private TextView tv_copy;
-    private TextView tv_address;
+    private TextView tv_copy,tv_address;
     private ImageView iv_QRCode;
     public MainActivityPresenter presenter;
 
