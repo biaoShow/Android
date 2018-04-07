@@ -11,10 +11,10 @@
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item><!--边框-->
         <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
-        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
         <item name="android:windowNoTitle">true</item><!--无标题-->
         <!--设置属性为false时,则Dialog弹出时,activity背景为高亮白色,设置为true时,则为一层黑色-->
-        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
 </resources>

@@ -3,11 +3,14 @@ package com.example.biao.demo1.SocialContact;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.biao.demo1.MyDialog;
 import com.example.biao.demo1.R;
 
 /**
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
         //初始化控件
         presenter = new MainActivityPresenter();
         btn_progress = findViewById(R.id.btn_progress);
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 presenter.emergeMyDialog(MainActivity.this);
+                presenter.bgAnimation();
             }
         });
     }

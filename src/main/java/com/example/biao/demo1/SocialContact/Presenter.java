@@ -3,8 +3,8 @@ package com.example.biao.demo1.SocialContact;
 import android.content.Context;
 
 /**
+ * presenter 接口类，提供显示dialog方法
  *
- * Created by biao on 2018/4/4.
  */
 
 public interface Presenter {

@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <include
-        layout="@layout/title_layout"
+        layout="@layout/title_include"
         android:layout_width="wrap_content"
         android:layout_height="50dp" />
 
@@ -45,7 +45,7 @@
                 android:layout_height="220dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/ivlayout"
+                android:background="@drawable/iv_bg_shape"
                 android:padding="5dp"
                 android:src="@mipmap/delete" />
 
@@ -65,7 +65,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/linear">
+                android:background="@drawable/rl_bg_shape">
 
                 <TextView
                     android:id="@+id/tv_address"
