@@ -64,15 +64,6 @@ public class MyDialog extends Dialog {
         String str = cfbean.url = "www.baidu.com";
         //初始化动画
         animation = AnimationUtils.loadAnimation(context, R.anim.ll_dialog_animation);
-//        LinearLayout linearLayout = findViewById(R.id.ll_share_item);
-//
-//        int length = model.strArray.length;
-//        for (int i = 0;i<length;i++){
-//            View view = View.inflate(this.context,R.layout.title_include,null);
-//            linearLayout.addView(view);
-//        }
-
-
         bitmap = QRCodeUtil.createQRImage(str, 500, 500, null);
         iv_dialog_rRCode.setImageBitmap(bitmap);
 

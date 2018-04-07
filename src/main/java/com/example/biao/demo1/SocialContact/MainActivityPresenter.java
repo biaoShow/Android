@@ -29,13 +29,12 @@ public class MainActivityPresenter implements Presenter {
         selectDialog.show();
         //设置背景色为透明
         selectDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        //selectDialog.setCanceledOnTouchOutside(false);//设置点击空白处不关闭dialog
-        //WindowManager m = getWindowManager();
-        //Display d = m.getDefaultDisplay(); //为获取屏幕宽、高
-        android.view.WindowManager.LayoutParams p = selectDialog.getWindow().getAttributes(); //获取对话框当前的参数值
+        //获取对话框当前的参数值
+        android.view.WindowManager.LayoutParams p = selectDialog.getWindow().getAttributes();
         p.height = 1460; //高度设置
         p.width = 1000; //宽度设置
-        selectDialog.getWindow().setAttributes(p); //设置
+        //设置dialog生效
+        selectDialog.getWindow().setAttributes(p);
     }
 
 

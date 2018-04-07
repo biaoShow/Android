@@ -8,9 +8,5 @@ package com.example.biao.demo1.SocialContact;
 
 public class CardFriendBean {
 
-
     public String url;
-
-//    public String[] strArray={"weChat","friendCycle","weibo","QQ","yinXin"};
-
 }
