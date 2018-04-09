@@ -15,13 +15,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.biao.demo1.SocialContact.CardFriendBean;
 import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
 import com.facebook.rebound.SpringConfig;
 import com.facebook.rebound.SpringSystem;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.UUID;
@@ -33,7 +31,7 @@ import java.util.UUID;
 
 public class MyDialog extends Dialog {
     private Bitmap bitmap;
-    private Animation animation;
+        private Animation animation;
     private CardFriendBean cfbean;
     private TextView tv_save, tv_cansel;
     private Context context;
@@ -87,7 +85,6 @@ public class MyDialog extends Dialog {
 
     /**
      * 保存图片（二维码）到本地方法
-     *
      * @param bitmap  图片资源
      * @param context 调用方法上下文
      */
@@ -97,7 +94,7 @@ public class MyDialog extends Dialog {
         //判断是否为挂载状态
         //未挂载
         if (!state.equals(Environment.MEDIA_MOUNTED)) {
-            Toast.makeText(context,"内存卡未挂载!",Toast.LENGTH_SHORT);
+            Toast.makeText(context,"内存卡未挂载!",Toast.LENGTH_SHORT).show();
         } else {
             //已挂载
             //获取储存地址

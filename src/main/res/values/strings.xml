@@ -20,6 +20,6 @@
     <string name="tv_qq">QQ</string>
     <string name="tv_save">保存到相册</string>
     <string name="tv_cancel">取消</string>
-    <string name="tv_title_applycard">推荐办卡</string>
+        <string name="tv_title_applycard">推荐办卡</string>
 
 </resources>
