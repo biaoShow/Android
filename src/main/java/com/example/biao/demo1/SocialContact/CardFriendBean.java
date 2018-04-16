@@ -1,11 +1,9 @@
 package com.example.biao.demo1.SocialContact;
 
 
-
 /**
- * Created by biao on 2018/4/4.
+ * dialog的model类
  */
-
 public class CardFriendBean {
 
     public String url;

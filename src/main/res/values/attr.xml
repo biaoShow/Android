@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <declare-styleable name="MyView">
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="mybackground" format="color"/>
+        <attr name="mysrc" format="integer|reference|string"/>
+        <attr name="imgWidth" format="dimension"/>
+        <attr name="imgHeight" format="dimension"/>
+        <attr name="img_and_text_distance" format="dimension"/>
+        <attr name="viewXr" format="dimension"/>
+        <attr name="viewYr" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.biao.demo1.SocialContact.CardFriendBean;
@@ -26,23 +26,21 @@ import java.util.UUID;
 
 /**
  * 自定义Dialog类
- * Created by biao on 2018/4/2.
+ * bitmap 生成二维码图片
+ * tv_qrcode_save 二维码保存按钮
+ * tv_close_dialog 关闭dialog按钮
+ * mv_qrcode dialog中自定义view二维码
+ * rl_share_qrcode dialog布局父布局
  */
 
 public class MyDialog extends Dialog {
     private Bitmap bitmap;
-        private Animation animation;
+    private Animation animation;
     private CardFriendBean cfbean;
-    private TextView tv_save, tv_cansel;
+    private TextView tv_qrcode_save, tv_close_dialog;
     private Context context;
-    private ImageView iv_dialog_rRCode;
-    private LinearLayout ll_share_allitem;
-
-//    public MyDialog(@NonNull Context context, CardFriendBean cfbean){
-//        super(context);
-//        this.cfbean = cfbean;
-//        this.context = context;
-//    }
+    private MyView mv_qrcode;
+    private RelativeLayout rl_share_qrcode;
 
 
     public MyDialog(@NonNull Context context) {
@@ -54,19 +52,19 @@ public class MyDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shareqrcode_dialog);
-        iv_dialog_rRCode = findViewById(R.id.iv_dialog_qRCode);
-        tv_save = findViewById(R.id.tv_save);
-        tv_cansel = findViewById(R.id.tv_cancel);
-        ll_share_allitem = findViewById(R.id.ll_share_allitem);
+        mv_qrcode = findViewById(R.id.mv_qrcode);
+        tv_qrcode_save = findViewById(R.id.tv_qrcode_save);
+        tv_close_dialog = findViewById(R.id.tv_close_dialog);
+        rl_share_qrcode = findViewById(R.id.rl_share_qrcode);
         cfbean = new CardFriendBean();
         String str = cfbean.url = "www.baidu.com";
         //初始化动画
-        animation = AnimationUtils.loadAnimation(context, R.anim.ll_dialog_animation);
+        animation = AnimationUtils.loadAnimation(context, R.anim.rl_dialog_animation);
         bitmap = QRCodeUtil.createQRImage(str, 500, 500, null);
-        iv_dialog_rRCode.setImageBitmap(bitmap);
+        mv_qrcode.setImageBitmap(bitmap);
 
-        //点击保存图片按钮，调用saveQRcoed犯法保存图片到本地
-        tv_save.setOnClickListener(new View.OnClickListener() {
+        //点击保存图片按钮，调用saveQRcoed方法保存图片到本地
+        tv_qrcode_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveQRcoed(bitmap, context);
@@ -74,7 +72,7 @@ public class MyDialog extends Dialog {
         });
 
         //点击取消按钮，关闭dialog
-        tv_cansel.setOnClickListener(new View.OnClickListener() {
+        tv_close_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
@@ -88,7 +86,7 @@ public class MyDialog extends Dialog {
      * @param bitmap  图片资源
      * @param context 调用方法上下文
      */
-    public void saveQRcoed(Bitmap bitmap, Context context) {
+    private void saveQRcoed(Bitmap bitmap, Context context) {
         //获取外置内存状态
         String state = Environment.getExternalStorageState();
         //判断是否为挂载状态
@@ -102,7 +100,12 @@ public class MyDialog extends Dialog {
             //判断地址是否存在
             if (!floder.exists()) {
                 //不存在，则创建
-                floder.mkdirs();
+                boolean s = floder.mkdirs();
+                if(s){
+                    Toast.makeText(context,"创建文件夹成功！",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(context,"创建文件夹失败！",Toast.LENGTH_SHORT).show();
+                }
             }
 
             //创建文件名
@@ -130,7 +133,7 @@ public class MyDialog extends Dialog {
      * dialog 渐变效果
      */
     public void bgAnimation() {
-        ll_share_allitem.startAnimation(animation);
+        rl_share_qrcode.startAnimation(animation);
     }
 
 
@@ -147,8 +150,8 @@ public class MyDialog extends Dialog {
             public void onSpringUpdate(Spring spring) {
                 super.onSpringUpdate(spring);
                 float currentValue = (float) spring.getCurrentValue();
-                ll_share_allitem.setScaleX(currentValue);
-                ll_share_allitem.setScaleY(currentValue);
+                rl_share_qrcode.setScaleX(currentValue);
+                rl_share_qrcode.setScaleY(currentValue);
             }
         });
         spring.setEndValue(1.0f);

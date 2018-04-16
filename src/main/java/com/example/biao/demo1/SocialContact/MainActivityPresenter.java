@@ -13,7 +13,7 @@ import com.example.biao.demo1.QRCodeUtil;
  */
 public class MainActivityPresenter implements Presenter {
 
-    Bitmap bitmap;
+    private Bitmap bitmap;
     private CardFriendBean cfbean = new CardFriendBean();
     private MyDialog selectDialog;
 
@@ -31,8 +31,8 @@ public class MainActivityPresenter implements Presenter {
         selectDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         //获取对话框当前的参数值
         android.view.WindowManager.LayoutParams p = selectDialog.getWindow().getAttributes();
-        p.height = 1460; //高度设置
-        p.width = 1000; //宽度设置
+        p.height = 1390; //高度设置
+        p.width = 950; //宽度设置
         //设置dialog生效
         selectDialog.getWindow().setAttributes(p);
     }
